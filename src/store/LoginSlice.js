@@ -12,14 +12,14 @@ const loginSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(getLoginDetail.pending, (state, action) => {
+            .addCase(getLoginDetail.pending, (state) => {
                 state.status = StatusCode.LOADING
             })
             .addCase(getLoginDetail.fulfilled, (state, action) => {
                 state.status = StatusCode.IDLE;
                 state.loginData = action.payload
             })
-            .addCase(getLoginDetail.rejected, (state, action) => {
+            .addCase(getLoginDetail.rejected, (state) => {
                 state.status = StatusCode.ERROR
             })
     }
