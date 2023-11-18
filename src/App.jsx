@@ -7,8 +7,9 @@ import { RootLayout } from './components/templates/RootLayout';
 import { SubscribePage } from './components/pages/SubscribePage';
 import { Provider } from "react-redux"
 import store from "./store/store";
-import LoginPage from './components/pages/LoginPage';
 import { ErrorPage } from './components/pages/ErrorPage/ErrorPage';
+import LoginPage from './components/pages/LoginPage/LoginPage';
+
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
