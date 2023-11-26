@@ -13,7 +13,7 @@ export const NavBarPanel = () => {
         dispatch(getAllProductCategories())
     }, [dispatch])
 
-    return <div><nav className="flex items-center  p-4 m-2 justify-around">
+    return <div class="flex"><nav className="flex items-center  p-4 m-2 justify-around">
         <ul className="flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-3 ">
             <li className="group"><Link to="/">Dashboard</Link><div className="border-black border-t-2 opacity-0 group-hover:opacity-100 duration-200"></div></li>
             <li className="group"><Link to="/cart">Cart</Link><div className="border-black border-t-2 opacity-0 group-hover:opacity-100 duration-200"></div></li>
