@@ -41,7 +41,7 @@ export const NavBarPanel = () => {
             {(location?.pathname !== '/cart')? <nav className="p-4 m-2">
                 <ul className="flex justify-around">
                     {allCategories?.map(category => {
-                        return <li key={category}><NavLink to={`/dashboard/${category}`}>{category}</NavLink></li>
+                        return <li key={category}><NavLink to={`${category}`}>{category}</NavLink></li>
                     })}
                 </ul>
             </nav>: null}
