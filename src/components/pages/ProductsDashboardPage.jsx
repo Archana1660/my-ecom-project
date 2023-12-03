@@ -33,7 +33,7 @@ export const ProductsDashboardPage = ({ category }) => {
     return <div className="flex items-center justify-center min-h-screen ">
         <section className="bg-neutral-100 p-6 m-2 shadow-2xl rounded-3xl md:p-20">
 
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="grid gap-5 grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
                 {products?.map((product) => {
                     return <Card key={product.id} handleCart={handleAddItemToCart} itemDetail={product} isAddItemButton={true} />
                 })}
