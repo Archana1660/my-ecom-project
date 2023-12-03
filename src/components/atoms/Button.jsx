@@ -16,11 +16,11 @@ export const Button = ({ handleCart, itemDetail, isAddItemButton = true, customS
 Button.propTypes = {
     handleCart: PropTypes.func,
      itemDetail: PropTypes.shape({
-        id: PropTypes.string,
+        id: PropTypes.number,
         image: PropTypes.string,
-        price: PropTypes.string,
+        price: PropTypes.number,
         title: PropTypes.string
      }),
-    isAddItemButton: PropTypes.string,
+    isAddItemButton: PropTypes.bool,
      customStyle: PropTypes.string
 }
