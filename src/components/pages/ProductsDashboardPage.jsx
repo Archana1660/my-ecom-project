@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { add } from "../../store/CartSlice";
 import { getProducts } from "../../store/ProductDashboardStore/ProductDashboardSlice";
 import { StatusCode } from "../../utils/StatusCode";
+import { ErrorPage } from "./ErrorPage/ErrorPage";
 import PropTypes from 'prop-types';
 
 export const ProductsDashboardPage = ({ category }) => {
@@ -23,7 +24,7 @@ export const ProductsDashboardPage = ({ category }) => {
     }
 
     if (status === StatusCode.ERROR) {
-        return <p>Error...</p>
+        return <ErrorPage/>
     }
 
     const handleAddItemToCart = (itemDetail) => {
