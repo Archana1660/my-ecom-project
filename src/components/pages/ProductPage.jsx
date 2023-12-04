@@ -37,7 +37,7 @@ export const ProductPage = () => {
                     <div className="flex flex-col space-y-4 md:flex-row md:space-x-2 md:space-y-0">
                         <button type="button" className="border border-black px-3 py-2 rounded-lg shadow-sm hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200">
                             <CartIcon customizeStyle="w-4 h-4 inline-block" /> Add to cart</button>
-                        <button type="button" className="border border-black px-3 py-2 rounded-lg hover:-translate-y-0.5 hover:shadow-lg shadow-black duration-200"> <WishListIcon customizeStyle="w-4 h-4 inline-block" /> Add to wishlist</button>
+                        <button type="button" className="border border-black px-3 py-2 rounded-lg active:-translate-y-0.5 hover:shadow-lg shadow-black duration-200"> <WishListIcon customizeStyle="w-4 h-4 inline-block" /> Add to wishlist</button>
                     </div>
 
                 </div>
