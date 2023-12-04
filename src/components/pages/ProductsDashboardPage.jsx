@@ -31,7 +31,7 @@ export const ProductsDashboardPage = ({ category }) => {
     }
 
     return <div className="flex items-center justify-center min-h-screen ">
-        <section className="bg-neutral-100 p-6 m-2 shadow-2xl rounded-3xl md:p-20">
+        <section className="bg-neutral-100 p-2 m-2 shadow-2xl rounded-3xl md:p-10">
 
             <div className="grid gap-5 grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
                 {products?.map((product) => {
