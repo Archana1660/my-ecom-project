@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Card } from "../organisms/Card";
 import { useSelector, useDispatch } from "react-redux";
 import { add } from "../../store/CartSlice";
@@ -35,7 +35,7 @@ export const ProductsDashboardPage = ({ category }) => {
 
             <div className="grid gap-5 grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
                 {products?.map((product) => {
-                    return <Card key={product.id} handleCart={handleAddItemToCart} itemDetail={product} isAddItemButton={true} />
+                    return <Card key={product.id} handleCart={handleAddItemToCart} itemDetail={product}/>
                 })}
             </div>
 

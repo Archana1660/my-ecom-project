@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 
 
-export const ProductImage = ({ itemImage: productImage }) => {
-    return <img src={productImage} alt={productImage} className="object-contain group-hover:scale-105 duration-200" />
+export const ProductImage = ({itemImage, style}) => {
+    return <img src={itemImage} alt={itemImage} style={style} className="object-contain group-hover:scale-105 duration-200 m-auto" />
 }
 
 ProductImage.propTypes = {
-    itemImage: PropTypes.string
+    itemImage: PropTypes.string,
+    style: PropTypes.object
 }
