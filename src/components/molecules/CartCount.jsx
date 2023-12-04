@@ -4,10 +4,10 @@ import { CartIcon } from "../atoms/CartIcon"
 
 export const CartCount = () => {
     const cartCount = useSelector(state => state.CART)
-    return <div className="relative">
-        <Link to="/cart">
+    return <div className="flex items-center">
+        <Link className="relative" to="/cart">
+        <span className="absolute -top-3 right-2">{cartCount.length}</span>
             <CartIcon />
         </Link>
-        <span className="absolute -top-3 right-3">{cartCount.length}</span>
     </div>
 }
