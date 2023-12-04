@@ -21,7 +21,7 @@ const LoginPage = () => {
         if (token === true) {
             navigate('/')     
         }
-}
+    }
     const handleFormSubmit = (e) => {
         e.preventDefault()
         dispatch(getLoginDetail(userCredential))
