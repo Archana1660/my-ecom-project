@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { getLoginDetail } from '../../../store/LoginSlice';
 import { WorkInProgress } from '../../molecules/WorkInProgress';
 import loginPagePic from '../../../assets/loginShopping.jpg'
@@ -10,20 +10,27 @@ import { useValidCheckUserNamePassword } from './validUserNamePassword';
 
 const LoginPage = () => {
     const dispatch = useDispatch()
-    const { loginData } = useSelector(state => state.LOGIN)
-    if (loginData?.token) {
-        window.localStorage.setItem('token', loginData.token)
-
-    }
-
+    const navigate = useNavigate()
     const [userCredential, setUserCredential] = useState({ username: null, password: null })
 
+    const { loginData } = useSelector(state => state.LOGIN)
+
+    let isDisabled = useValidCheckUserNamePassword(userCredential) ?? true;
+
+    const validateUser = (token) => {
+        if (token === true) {
+            navigate('/')     
+        }
+    }
     const handleFormSubmit = (e) => {
         e.preventDefault()
         dispatch(getLoginDetail(userCredential))
+          if (loginData?.token) {
+              window.localStorage.setItem('token', loginData.token)
+              validateUser(loginData?.token)
+          }
     }
 
-    let isDisabled = useValidCheckUserNamePassword(userCredential) ?? true;
 
     return (
         <div className='flex items-center justify-center min-h-screen bg-rose-50'>
