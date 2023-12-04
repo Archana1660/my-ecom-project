@@ -39,7 +39,13 @@ export const getLoginDetail = createAsyncThunk(
         }
 
         const response = await fetch('https://fakestoreapi.com/auth/login', config)
-        const result = await response.json()
+        //dummy success login to allow login for all user
+        let token;
+        if (response.status !== 200) {
+            token = { token: true }
+        }
+        // const result = await response.json()
+        const result = token
         return result
     }
 )

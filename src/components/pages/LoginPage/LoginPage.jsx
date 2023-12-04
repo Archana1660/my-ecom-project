@@ -11,21 +11,24 @@ import { useValidCheckUserNamePassword } from './validUserNamePassword';
 const LoginPage = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    //TODO:Check for token and allow redirect
-    // const { loginData } = useSelector(state => state.LOGIN)
-    // if (loginData?.token) {
-    //     window.localStorage.setItem('token', loginData.token)
-    // } 
-
     const [userCredential, setUserCredential] = useState({ username: null, password: null })
+
+    const { loginData } = useSelector(state => state.LOGIN)
+
     let isDisabled = useValidCheckUserNamePassword(userCredential) ?? true;
 
+    const validateUser = (token) => {
+        if (token === true) {
+            navigate('/')     
+        }
+}
     const handleFormSubmit = (e) => {
         e.preventDefault()
         dispatch(getLoginDetail(userCredential))
-        window.localStorage.setItem('token', true)
-        //TODO:Check for token and allow redirect
-        navigate('/')
+          if (loginData?.token) {
+              window.localStorage.setItem('token', loginData.token)
+              validateUser(loginData?.token)
+          }
     }
 
 
