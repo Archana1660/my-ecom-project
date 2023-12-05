@@ -5,7 +5,7 @@ import { CartIcon } from "../atoms/CartIcon"
 export const CartCount = () => {
     const cartCount = useSelector(state => state.CART)
     return <div className="flex items-center">
-        <Link className="relative" to="/cart">
+        <Link className="relative" to="/my-ecom-project/cart">
         <span className="absolute -top-3 right-2">{cartCount.length}</span>
             <CartIcon />
         </Link>
