@@ -58,7 +58,7 @@ export const NavBarPanel = () => {
                 </div>
             </nav>
         
-            {(location?.pathname !== '/cart')? <nav className="category-list p-4 m-2">
+            {(location?.pathname !== '/my-ecom-project/cart')? <nav className="category-list p-4 m-2">
                 <ul className="flex flex-wrap justify-around">
                     {allCategories?.map(category => {
                         return <li key={category} className="group border-solid border-r-2 sm:border-none"><NavLink className="px-1 my-1" to={`/my-ecom-project/${category}`}>{category}</NavLink></li>
