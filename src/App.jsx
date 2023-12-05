@@ -13,16 +13,16 @@ import LoginPage from './components/pages/LoginPage/LoginPage';
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <>
-      <Route path="login" element={<LoginPage />} />
-      <Route path="/" element={<RootLayout />} errorElement={<ErrorPage/>}>
+      <Route path="/my-ecom-project/login" element={<LoginPage />} />
+      <Route path="/my-ecom-project" element={<RootLayout />} errorElement={<ErrorPage/>}>
         {/*Dashboard is a default component */}
         <Route index element={<ProductsDashboardPage />}></Route>
-        <Route path='/cart' element={<CartPage />}></Route>
-        <Route path='/product/:id' element={<ProductPage />}></Route>
-        <Route path='/electronics' element={<ProductsDashboardPage category="electronics" />}></Route>
-        <Route path='/jewelery' element={<ProductsDashboardPage category="jewelery" />}></Route>
-        <Route path="/men's clothing" element={<ProductsDashboardPage category="men's clothing" />}></Route>
-        <Route path="/women's clothing" element={<ProductsDashboardPage category="women's clothing" />}></Route>
+        <Route path='/my-ecom-project/cart' element={<CartPage />}></Route>
+        <Route path='/my-ecom-project/product/:id' element={<ProductPage />}></Route>
+        <Route path='/my-ecom-project/electronics' element={<ProductsDashboardPage category="electronics" />}></Route>
+        <Route path='/my-ecom-project/jewelery' element={<ProductsDashboardPage category="jewelery" />}></Route>
+        <Route path="/my-ecom-project/men's clothing" element={<ProductsDashboardPage category="men's clothing" />}></Route>
+        <Route path="/my-ecom-project/women's clothing" element={<ProductsDashboardPage category="women's clothing" />}></Route>
       </Route>
     </>
   ))
