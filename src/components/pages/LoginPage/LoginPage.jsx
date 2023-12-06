@@ -19,7 +19,7 @@ const LoginPage = () => {
 
     const validateUser = (token) => {
         if (token === true) {
-            navigate('/')     
+            navigate('/my-ecom-project/')     
         }
     }
     const handleFormSubmit = (e) => {

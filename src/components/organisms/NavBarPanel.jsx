@@ -38,7 +38,7 @@ export const NavBarPanel = () => {
                         <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/my-ecom-project/categories">Categories</NavLink>
                     </li>
                     <li className="group">
-                        <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/cart">Cart</NavLink>
+                        <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/my-ecom-project/cart">Cart</NavLink>
                     </li>
                 </ul>
                 <nav className="main-navigation md:hidden block relative">
@@ -48,7 +48,7 @@ export const NavBarPanel = () => {
                         <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/my-ecom-project/categories">Categories</NavLink>
                     </li>
                     <li className="group">
-                        <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/cart">Cart</NavLink>
+                        <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/my-ecom-project/cart">Cart</NavLink>
                     </li>
                     </ul>
                 </nav> 
@@ -58,7 +58,7 @@ export const NavBarPanel = () => {
                 </div>
             </nav>
         
-            {(location?.pathname !== '/cart')? <nav className="category-list p-4 m-2">
+            {(location?.pathname !== '/my-ecom-project/cart')? <nav className="category-list p-4 m-2">
                 <ul className="flex flex-wrap justify-around">
                     {allCategories?.map(category => {
                         return <li key={category} className="group border-solid border-r-2 sm:border-none"><NavLink className="px-1 my-1" to={`/my-ecom-project/categories/${category}`}>{category}</NavLink></li>

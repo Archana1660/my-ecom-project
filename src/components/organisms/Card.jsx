@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import './Card.css';
 
-export const Card = ({ handleCart, itemDetail, isAddItemButton = true }) => {
+export const Card = ({itemDetail, showRemoveButton = true, showButton = true }) => {
 
     let itemImage = itemDetail?.image;
     let itemPrice = itemDetail?.price;
@@ -18,7 +18,7 @@ export const Card = ({ handleCart, itemDetail, isAddItemButton = true }) => {
         <div className="card-details flex flex-col items-center justify-center space-y-2 mt-5">
             <h5 className="font-bold">{itemDetail.title}</h5>
             <ProductPrice itemPrice={itemPrice} />
-            {/* <Button handleCart={handleCart} itemDetail={itemDetail} isAddItemButton={isAddItemButton} /> */}
+            {showButton ? <Button itemDetail={itemDetail} showRemoveButton={showRemoveButton} /> : null}
         </div>
     </div>
 }
@@ -31,5 +31,6 @@ Card.propTypes = {
         price: PropTypes.number,
         title: PropTypes.string
     }),
-    isAddItemButton: PropTypes.bool,
+    showRemoveButton: PropTypes.bool,
+    showButton: PropTypes.bool,
 }

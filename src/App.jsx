@@ -13,8 +13,8 @@ import LoginPage from './components/pages/LoginPage/LoginPage';
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <>
-      <Route path="login" element={<LoginPage />} />
-      <Route path="/" element={<RootLayout />} errorElement={<ErrorPage/>}>
+      <Route path="/my-ecom-project/login" element={<LoginPage />} />
+      <Route path="/my-ecom-project" element={<RootLayout />} errorElement={<ErrorPage/>}>
         {/*Dashboard is a default component */}
         <Route path="/my-ecom-project/categories" element={<ProductsDashboardPage />}></Route>
         <Route path='/my-ecom-project/cart' element={<CartPage />}></Route>
