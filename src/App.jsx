@@ -16,13 +16,13 @@ function App() {
       <Route path="login" element={<LoginPage />} />
       <Route path="/" element={<RootLayout />} errorElement={<ErrorPage/>}>
         {/*Dashboard is a default component */}
-        <Route index element={<ProductsDashboardPage />}></Route>
-        <Route path='/cart' element={<CartPage />}></Route>
-        <Route path='/product/:id' element={<ProductPage />}></Route>
-        <Route path='/electronics' element={<ProductsDashboardPage category="electronics" />}></Route>
-        <Route path='/jewelery' element={<ProductsDashboardPage category="jewelery" />}></Route>
-        <Route path="/men's clothing" element={<ProductsDashboardPage category="men's clothing" />}></Route>
-        <Route path="/women's clothing" element={<ProductsDashboardPage category="women's clothing" />}></Route>
+        <Route path="/my-ecom-project/categories" element={<ProductsDashboardPage />}></Route>
+        <Route path='/my-ecom-project/cart' element={<CartPage />}></Route>
+        <Route path='/my-ecom-project/product/:id' element={<ProductPage />}></Route>
+        <Route path='/my-ecom-project/categories/electronics' element={<ProductsDashboardPage category="electronics" />}></Route>
+        <Route path='/my-ecom-project/categories/jewelery' element={<ProductsDashboardPage category="jewelery" />}></Route>
+        <Route path="/my-ecom-project/categories/men's clothing" element={<ProductsDashboardPage category="men's clothing" />}></Route>
+        <Route path="/my-ecom-project/categories/women's clothing" element={<ProductsDashboardPage category="women's clothing" />}></Route>
       </Route>
     </>
   ))

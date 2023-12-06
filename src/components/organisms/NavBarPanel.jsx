@@ -35,7 +35,7 @@ export const NavBarPanel = () => {
             <nav className="flex items-center p-1 md:p-4 m-2 justify-between border-b board-grap-500">
                 <ul className="hidden md:flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-3 ">
                     <li className="group">
-                        <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/">Categories</NavLink>
+                        <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/my-ecom-project/categories">Categories</NavLink>
                     </li>
                     <li className="group">
                         <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/cart">Cart</NavLink>
@@ -45,7 +45,7 @@ export const NavBarPanel = () => {
                     <img src={showBurgerMenu ? burgerMenuClose : burgerMenuOpen} alt={showBurgerMenu ? burgerMenuOpen : burgerMenuClose} className="w-8 h-8" onClick={handleShowMenu} />
                     <ul className={`p-5 rounded-xl shadow-2xl bg-white z-10 duration-200 absolute ${showBurgerMenu ? 'opacity-100 block': 'opacity-0 hidden'}`}>
                        <li className="group">
-                        <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/">Categories</NavLink>
+                        <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/my-ecom-project/categories">Categories</NavLink>
                     </li>
                     <li className="group">
                         <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/cart">Cart</NavLink>
@@ -61,7 +61,7 @@ export const NavBarPanel = () => {
             {(location?.pathname !== '/cart')? <nav className="category-list p-4 m-2">
                 <ul className="flex flex-wrap justify-around">
                     {allCategories?.map(category => {
-                        return <li key={category} className="group border-solid border-r-2 sm:border-none"><NavLink className="px-1 my-1" to={`${category}`}>{category}</NavLink></li>
+                        return <li key={category} className="group border-solid border-r-2 sm:border-none"><NavLink className="px-1 my-1" to={`/my-ecom-project/categories/${category}`}>{category}</NavLink></li>
                     })}
                 </ul>
             </nav> : null
