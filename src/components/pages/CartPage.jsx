@@ -8,7 +8,8 @@ export const CartPage = () => {
            
 
         {products.length > 0 ? 
-                <section className="grid grid-cols-4 gap-4">
+                <section className="grid gap-5 grid-col-1 sm:grid-cols-2 lg:grid-cols-3
+                ">
                     {products.map((product) => {
                         return <Card key={product.id} itemDetail={product} showRemoveButton={true} />
                     })}
