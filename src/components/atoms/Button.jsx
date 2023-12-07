@@ -1,6 +1,6 @@
 import  PropTypes from 'prop-types';
 
-export const Button = ({ handleOnClick, itemDetail={}, styleButton, children }) => {
+export const Button = ({ handleOnClick, itemDetail = {}, styleButton, children }) => {
     return <button type="button" onClick={()=>handleOnClick(itemDetail)} className={styleButton}>{children}</button>
 }
 

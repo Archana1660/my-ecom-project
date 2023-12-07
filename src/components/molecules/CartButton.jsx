@@ -10,9 +10,9 @@ export const CartButton = ({itemDetail, showRemoveButton = true, customStyle = '
     const styleRemoveButton = `bg-red-600 rounded-lg w-32 h-10 text-white`
 
     return showRemoveButton ?
-        <Button handleProduct={handleRemoveItemToCart} itemDetail={itemDetail} styleButton={styleRemoveButton}>Remove Cart</Button>
+        <Button handleOnClick={handleRemoveItemToCart} itemDetail={itemDetail} styleButton={styleRemoveButton}>Remove Cart</Button>
         : 
-        <Button handleProduct={handleAddItemToCart} itemDetail={itemDetail} styleButton={styleAddButton}>Add Cart</Button>
+        <Button handleOnClick={handleAddItemToCart} itemDetail={itemDetail} styleButton={styleAddButton}>Add Cart</Button>
         
 }
 CartButton.propTypes = {
