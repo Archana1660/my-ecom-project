@@ -1,7 +1,7 @@
 import { useEffect} from "react"
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Button } from "../atoms/Button";
+import { CartButton } from "../molecules/CartButton";
 import { getProductDetail} from "../../store/ProductSlice";
 
 export const ProductPage = () => {
@@ -34,7 +34,7 @@ export const ProductPage = () => {
                     <p className="text-5xl font-bold">${data?.price}</p>
                     <p className="font-bold text-gray-600">Offer valid till September 18 or as long as stock lasts!</p>
 
-                    <Button itemDetail={data} showRemoveButton={isAdded} customStyle='w-full shadow-xl shadow-blue-800 active:translate-y-2 hover:shadow-sm duration-200' />
+                    <CartButton itemDetail={data} showRemoveButton={isAdded} customStyle='w-full shadow-xl shadow-blue-800 active:translate-y-2 hover:shadow-sm duration-200' />
 
                 </div>
 

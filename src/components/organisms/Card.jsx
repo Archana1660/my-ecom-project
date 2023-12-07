@@ -1,4 +1,4 @@
-import { Button } from "../atoms/Button";
+import { CartButton } from "../molecules/CartButton";
 import { ProductImage } from "../atoms/ProductImage";
 import { ProductPrice } from "../atoms/ProductPrice";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ export const Card = ({itemDetail, showRemoveButton = true, showButton = true }) 
         <div className="card-details flex flex-col items-center justify-center space-y-2 mt-5">
             <h5 className="font-bold">{itemDetail.title}</h5>
             <ProductPrice itemPrice={itemPrice} />
-            {showButton ? <Button itemDetail={itemDetail} showRemoveButton={showRemoveButton} /> : null}
+            {showButton ? <CartButton itemDetail={itemDetail} showRemoveButton={showRemoveButton} /> : null}
         </div>
     </div>
 }
