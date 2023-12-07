@@ -19,7 +19,7 @@ export const ProductsDashboardPage = ({ category }) => {
     }, [category, dispatch])
 
     if (status === StatusCode.LOADING) {
-        return <p>Loading...</p>
+        return <p className="text-xl">Loading...</p>
     }
 
     if (status === StatusCode.ERROR) {
@@ -28,17 +28,19 @@ export const ProductsDashboardPage = ({ category }) => {
 
 
 
-    return <div className="flex items-center justify-center min-h-screen ">
-        <section className="bg-neutral-100 p-2 m-2 shadow-2xl rounded-3xl md:p-10">
+    return (
+        <div className="flex items-center justify-center min-h-screen ">
+            <section className="bg-neutral-100 p-2 m-2 shadow-2xl rounded-3xl md:p-10">
 
-            <div className="grid gap-5 grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
-                {products?.map((product) => {
-                    return <Card key={product.id} itemDetail={product} showButton={false}/>
-                })}
-            </div>
+                <div className="grid gap-5 grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
+                    {products?.map((product) => {
+                        return <Card key={product.id} itemDetail={product} showButton={false}/>
+                    })}
+                </div>
 
-        </section>
-    </div>
+            </section>
+        </div>
+    )
 }
 
 ProductsDashboardPage.propTypes = {

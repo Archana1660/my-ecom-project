@@ -7,17 +7,21 @@ import { getProductDetail} from "../../store/ProductSlice";
 export const ProductPage = () => {
     const dispatch = useDispatch()
     const data = useSelector(state => state.PRODUCT.productData);
+    const status = useSelector(state => state.PRODUCT.status);
     const product = useSelector(state => state.CART)
 
     const params = useParams() //what is params?
-
     useEffect(() => {
         dispatch(getProductDetail(params.id))
     }, [dispatch, params])
 
     const isAdded = product.some((product) => data.id === product.id)
 
-    return <main >
+    return (
+        <>
+            {(status === "loading") ? <button type="button" className="text-xl" disabled>
+            Loading...
+        </button> : <main>
         <section className="flex items-center justify-center">
             <div className="flex flex-col p-6 m-3 space-y-10 rounded-2xl shadow-2xl md:flex-row md:space-y-0 md:space-x-10 md:m-0 md:p-16">
                 <div>
@@ -29,7 +33,7 @@ export const ProductPage = () => {
                     </div>
                     <h2 className="max-w-sm text-2xl font-medium">{data?.title}</h2>
                      <div className="flex items-center space-x-2 group">
-                        <div className="w-3 h-3 bg-yellow-400 rounded-full grounp-hover:animate-ping"></div>  <p className="text-sm">{data?.rating?.rate}</p>
+                        <div className="w-3 h-3 bg-yellow-400 rounded-full grounp-hover:animate-ping"></div>  <p className="text-sm">{data?.rating?.rate} <span className="font-bold">Rating</span></p>
                     </div>
                     <p className="text-5xl font-bold">${data?.price}</p>
                     <p className="font-bold text-gray-600">Offer valid till September 18 or as long as stock lasts!</p>
@@ -40,5 +44,6 @@ export const ProductPage = () => {
 
             </div>
         </section>
-    </main>
+        </main> }</>
+    )
 }

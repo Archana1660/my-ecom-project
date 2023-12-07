@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 export const ProductPrice = ({ itemPrice: productPrice }) => {
-    return <p>INR: {productPrice}</p>
+    return <p>${productPrice}</p>
 }
 
 ProductPrice.propTypes = {
