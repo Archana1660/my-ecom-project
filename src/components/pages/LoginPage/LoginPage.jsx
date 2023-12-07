@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
-import { getLoginDetail } from '../../../store/LoginSlice';
+// import { getLoginDetail } from '../../../store/LoginSlice';
 import { WorkInProgress } from '../../molecules/WorkInProgress';
 import loginPagePic from '../../../assets/loginShopping.jpg'
 import facebookLogo from '../../../assets/facebook-logo.png'
@@ -9,7 +9,7 @@ import gmailLogo from '../../../assets/gmail-logo.png';
 import { useValidCheckUserNamePassword } from './validUserNamePassword';
 
 const LoginPage = () => {
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
     const navigate = useNavigate()
     const [userCredential, setUserCredential] = useState({ username: null, password: null })
 
@@ -17,18 +17,21 @@ const LoginPage = () => {
 
     let isDisabled = useValidCheckUserNamePassword(userCredential) ?? true;
 
-    const validateUser = (token) => {
-        if (token === true) {
-            navigate('/my-ecom-project/')     
-        }
-    }
+    // const validateUser = (token) => {
+    //     if (token === true) {
+    //         navigate('/my-ecom-project/')     
+    //     }
+    // }
     const handleFormSubmit = (e) => {
         e.preventDefault()
-        dispatch(getLoginDetail(userCredential))
-          if (loginData?.token) {
+        //TODO: remove comments from login logic once API works
+        // dispatch(getLoginDetail(userCredential))
+        //   if (loginData?.token) {
               window.localStorage.setItem('token', loginData.token)
-              validateUser(loginData?.token)
-          }
+              
+        //   validateUser(loginData?.token)
+         navigate('/my-ecom-project/categories')
+        //   }
     }
 
 
@@ -38,6 +41,8 @@ const LoginPage = () => {
                 <div className='p-10 flex flex-col space-y-5 md:p-20'>
                     <h2 className='font-mono font-bold text-4xl mt-4'>Log In</h2>
                     <p className='max-w-sm font-sans font-light text-gray-500'>Get all the exciting product in discounts! </p>
+                    <p className='max-w-sm font-sans font-light text-gray-500'>Note: Use any username and password to login</p>
+                    
                     <form action='' method='post' onSubmit={(e) => handleFormSubmit(e)}>
                         <input type='text' className='border border-gray-600 rounded-lg p-3 w-full placeholder:font-sans placeholder:font-light' placeholder='Enter your user name' onChange={(e) => {
                             return setUserCredential({ ...userCredential, username: e.target.value })
