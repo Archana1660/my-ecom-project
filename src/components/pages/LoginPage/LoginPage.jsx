@@ -19,7 +19,7 @@ const LoginPage = () => {
 
     // const validateUser = (token) => {
     //     if (token === true) {
-    //         navigate('/my-ecom-project/')     
+    //         navigate('/')     
     //     }
     // }
     const handleFormSubmit = (e) => {
@@ -30,7 +30,7 @@ const LoginPage = () => {
               window.localStorage.setItem('token', loginData.token)
               
         //   validateUser(loginData?.token)
-         navigate('/my-ecom-project/categories')
+         navigate('/categories')
         //   }
     }
 
