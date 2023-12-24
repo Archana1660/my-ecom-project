@@ -44,11 +44,11 @@ export const NavBarPanel = () => {
                         <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/cart">Cart</NavLink>
                     </li>
                 </ul>
-                <nav className="main-navigation md:hidden block relative">
+                <nav className="main-navigation md:hidden block lg:relative">
                     <img src={showBurgerMenu ? burgerMenuClose : burgerMenuOpen} alt={showBurgerMenu ? burgerMenuOpen : burgerMenuClose} className="w-8 h-8" onClick={handleShowMenu} />
                     <ul className={`p-5 rounded-xl shadow-2xl bg-white z-10 duration-200 absolute ${showBurgerMenu ? 'opacity-100 block': 'opacity-0 hidden'}`}>
                         <li className="group border-2 border-purple-400 rounded-lg py-2 mb-2">
-                            <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/">Dashboard</NavLink>
+                            <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/">Home</NavLink>
                         </li>
                         <li className="group border-2 border-purple-400 rounded-lg py-2 mb-2">
                             <NavLink className="border-black group-hover:border-b-2 duration-200" style={handleActiveLink} to="/categories">Categories</NavLink>
