@@ -6,7 +6,9 @@ import { SearchInput } from "../atoms/SearchInput"
 import { CartCount } from "../molecules/CartCount"
 import { getAllProductCategories } from "../../store/ProductDashboardStore/ProductCategorieNameSlice"
 import './NavBarPanel.css';
-import { burgerMenuOpen, burgerMenuClose } from "../../assets";
+import  burgerMenuOpen  from "../../assets/burger-menu.png";
+
+import burgerMenuClose from "../../assets/burger-menu-close.png";
 import { LogOutButton } from "../molecules/LogOutButton";
     
 export const NavBarPanel = () => {

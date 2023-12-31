@@ -1,6 +1,7 @@
 import { useRouteError } from "react-router"
 import { useNavigate } from "react-router-dom";
-import { errorImg, homePageIcon } from "../../../assets";
+import  errorImg from "../../../assets/embarrassed.png";
+import  homePageIcon  from "../../../assets/home.gif";
 
 export const ErrorPage = () => {
     const error = useRouteError();

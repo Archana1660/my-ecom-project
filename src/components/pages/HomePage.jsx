@@ -1,5 +1,8 @@
 import { useNavigate } from 'react-router-dom'
-import { soundCheck, ring_braclet_earring_set, summar, mens_jeans_shoe } from '../../assets'
+import soundCheck from '../../assets/soundCheck.jpg'
+import ring_braclet_earring_set from '../../assets/ring_braclet_earring_set.jpg'
+import summar from '../../assets/summar.jpg'
+import mens_jeans_shoe from '../../assets/mens_jeans_shoe.jpg'
 
 
 
