@@ -30,7 +30,7 @@ const LoginPage = () => {
               window.localStorage.setItem('token', loginData.token)
               
         //   validateUser(loginData?.token)
-         navigate('/')
+         navigate('/my-ecom-project/')
         //   }
     }
 

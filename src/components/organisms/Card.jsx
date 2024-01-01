@@ -12,7 +12,7 @@ export const Card = ({itemDetail, showRemoveButton = true, showButton = true }) 
     let itemPrice = itemDetail?.price;
 
     return <div className="shadow-lg rounded-xl p-10 md:p-5 lg:p-10 bg-white group flex flex-col justify-center">
-        <Link to={`/product/${itemDetail.id}`}>
+        <Link to={`/my-ecom-project/product/${itemDetail.id}`}>
             <ProductImage itemImage={itemImage} style={{height:'15rem', width:'15rem', borderRadius:'2rem'}} />
         </Link>
         <div className="card-details flex flex-col items-center justify-center space-y-2 mt-5">

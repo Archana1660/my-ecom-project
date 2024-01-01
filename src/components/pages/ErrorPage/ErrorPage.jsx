@@ -13,7 +13,7 @@ export const ErrorPage = () => {
         <p>
             <i>{ error.statusText || error.message}</i>
         </p>
-        <button type="button" onClick={()=>navigate('/')} className="w-40 border border-black rounded-lg p-2 mt-1 hover:bg-green-500 duration-200">
+        <button type="button" onClick={()=>navigate('/my-ecom-project/')} className="w-40 border border-black rounded-lg p-2 mt-1 hover:bg-green-500 duration-200">
             <img src={homePageIcon} alt={homePageIcon} className="w-7 h-7 mx-auto rounded-lg" />
             Back to Home page
         </button>

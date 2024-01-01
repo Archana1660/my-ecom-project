@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 export const LogOutButton = () => {  
     const navigate = useNavigate()
     const handleLogOut = () => {
-        navigate("/login")
+        navigate("/my-ecom-project/login")
         return window.localStorage.removeItem("token")
     }
     

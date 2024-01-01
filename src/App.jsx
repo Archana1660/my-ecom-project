@@ -11,24 +11,30 @@ import { ErrorPage } from './components/pages/ErrorPage/ErrorPage';
 import LoginPage from './components/pages/LoginPage/LoginPage';
 import { HomePage } from './components/pages/HomePage';
 
+import { getProducts } from './store/ProductDashboardStore/AllProductDashboardSlice';
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <>
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/" element={<RootLayout />} errorElement={<ErrorPage/>}>
-        {/*Dashboard is a default component */}
-        <Route index element={<HomePage/>}></Route>
-        <Route path="categories" element={<ProductsDashboardLayout />}>
-          <Route path='electronics' element={<ProductDashboard category="electronics" />}></Route>
-          <Route path='jewelery' element={<ProductDashboard category="jewelery" />}></Route>
-          <Route path="men's clothing" element={<ProductDashboard category="men's clothing" />}></Route>
-          <Route path="women's clothing" element={<ProductDashboard category="women's clothing" />}></Route>
+      {/* Specific routes */}
+      <Route path="/my-ecom-project/login" element={<LoginPage />} />
+
+      {/* Default routes with 404 catch-all */}
+      <Route path="/my-ecom-project/" element={<RootLayout />}>
+        {/* Dashboard is a default component */}
+        <Route index element={<HomePage />}/>
+        <Route path="/my-ecom-project/categories" element={<ProductsDashboardLayout />}>
+          <Route path='electronics' element={<ProductDashboard category="electronics" />} loader={getProducts}/>
+          <Route path='jewelery' element={<ProductDashboard category="jewelery" />}/>
+          <Route path="men's clothing" element={<ProductDashboard category="men's clothing" />}/>
+          <Route path="women's clothing" element={<ProductDashboard category="women's clothing" />}/>
         </Route>
-        <Route path='cart' element={<CartPage />}></Route>
-        <Route path='product/:id' element={<ProductPage />}></Route>
-       
+        <Route path='/my-ecom-project/cart' element={<CartPage />}/>
+        <Route path='/my-ecom-project/product/:id' element={<ProductPage />}/>
       </Route>
+
+      {/* 404 Route - Catch all unmatched routes */}
+      <Route path='*' element={<ErrorPage/>}/>
     </>
   ))
   return (

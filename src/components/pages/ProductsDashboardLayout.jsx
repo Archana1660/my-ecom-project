@@ -10,7 +10,7 @@ export const ProductsDashboardLayout = () => {
             {/**    
              * <Outlet/> display specific category list e.g. electronics, jewelery etc
              */}
-            {location.pathname !== '/categories'? <Outlet/>:<AllProductDashboard/>}
+            {location.pathname !== '/my-ecom-project/categories'? <Outlet/>:<AllProductDashboard/>}
         </>
     )
 }
