@@ -1,28 +1,33 @@
 import { useEffect } from "react";
-import PropTypes from 'prop-types';
+import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 import { Card } from "../organisms/Card";
-import { useSelector, useDispatch } from "react-redux";
-import { getProducts } from "../../store/ProductDashboardStore/ProductDashboardSlice";
-import { StatusCode } from "../../utils/StatusCode";
-import { ErrorPage } from "./ErrorPage/ErrorPage";
+import { ProductErrorPage } from './ProductErrorPage/ProductErrorPage';
 
-export const ProductDashboard = ({ category }) => {
+
+import { getProducts } from "../../store/ProductDashboardStore/ProductDashboardSlice";
+
+import { StatusCode } from "../../utils/StatusCode";
+
+export const ProductDashboard = () => {
+    const { id } = useParams();
+    
     const dispatch = useDispatch()
     const { data: products, status } = useSelector(state => state.ALL_PRODUCT)
 
     useEffect(() => {
-        if (category) {
-            dispatch(getProducts(category))
+        if (id) {
+            dispatch(getProducts(id))
         }
-    }, [category, dispatch])
+    }, [id, dispatch])
 
     if (status === StatusCode.LOADING) {
         return <p className="text-xl">Loading...</p>
     }
 
     if (status === StatusCode.ERROR) {
-        return <ErrorPage/>
+        return <ProductErrorPage productsErrorMessage={products} />
     }
 
 
@@ -40,7 +45,3 @@ export const ProductDashboard = ({ category }) => {
         </div>
   )
 }
-
-ProductDashboard.propTypes = {
-    category: PropTypes.string
-};
