@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import PropTypes from 'prop-types';
 
 import { Card } from "../organisms/Card";
-import { ErrorPage } from "./ErrorPage/ErrorPage";
+import { ProductErrorPage } from './ProductErrorPage/ProductErrorPage';
+
 
 import { getProducts } from "../../store/ProductDashboardStore/ProductDashboardSlice";
 
@@ -27,7 +27,7 @@ export const ProductDashboard = () => {
     }
 
     if (status === StatusCode.ERROR) {
-        return <ErrorPage/>
+        return <ProductErrorPage productsErrorMessage={products} />
     }
 
 
@@ -45,7 +45,3 @@ export const ProductDashboard = () => {
         </div>
   )
 }
-
-ProductDashboard.propTypes = {
-    category: PropTypes.string
-};
