@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 
 import { Outlet } from "react-router";
 import { useLocation } from 'react-router-dom';
@@ -15,7 +14,3 @@ export const ProductsDashboardLayout = () => {
         </>
     )
 }
-
-ProductsDashboardLayout.propTypes = {
-    category: PropTypes.string
-};

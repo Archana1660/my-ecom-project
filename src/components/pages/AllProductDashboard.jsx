@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "../../store/ProductDashboardStore/AllProductDashboardSlice";
 import { StatusCode } from "../../utils/StatusCode";
 import { ErrorPage } from "./ErrorPage/ErrorPage";
-import PropTypes from 'prop-types';
 
 export const AllProductDashboard = () => {
     const dispatch = useDispatch()
@@ -38,7 +37,3 @@ export const AllProductDashboard = () => {
         </>
     )
 }
-
-AllProductDashboard.propTypes = {
-    category: PropTypes.string
-};
