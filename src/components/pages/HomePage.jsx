@@ -1,8 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import soundCheck from '../../assets/soundCheck.jpg'
-import ring_braclet_earring_set from '../../assets/ring_braclet_earring_set.jpg'
-import summar from '../../assets/summar.jpg'
-import mens_jeans_shoe from '../../assets/mens_jeans_shoe.jpg'
+import { soundCheck, ring_braclet_earring_set, summar, mens_jeans_shoe } from '../../assets'
 
 
 
@@ -24,7 +21,7 @@ return (
         <img src={`${ring_braclet_earring_set}`} alt={`${ring_braclet_earring_set}`} className='duration-200 w-56 h-fit inline-block' />
       </div>
       <div className='relative group'>
-        <div className='backdrop-blur-sm bg-white/30 w-full h-full inset-y-2.5 absolute hidden group-hover:flex items-center justify-center duration-200' onClick={() => navigate("/my-ecom-project/categories/men's clothing")}>
+        <div className='backdrop-blur-sm bg-white/30 w-full h-full inset-y-2.5 absolute hidden group-hover:flex items-center justify-center duration-200' onClick={() => navigate("/my-ecom-project/categories/women's clothing")}>
           <p className='text-2xl'>Women&apos;s Clothing</p>
         </div>
         <img src={`${summar}`} alt={`${summar}`} className='w-48 h-min duration-200 inline-block' />
