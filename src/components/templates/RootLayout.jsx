@@ -10,5 +10,5 @@ export const RootLayout = () => {
                 <NavBarPanel />
             </header>
             <Outlet />
-        </main> : <Navigate to="/login" />
+        </main> : <Navigate to="/my-ecom-project/login" />
 }
