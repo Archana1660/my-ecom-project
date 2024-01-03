@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { CartButton } from "../../molecules/CartButton";
 import { ProductErrorPage } from '../ProductErrorPage/ProductErrorPage';
+import { ProductSkeleton } from './ProductSkeleton';
 
 import { getProductDetail} from "../../../store/ProductSlice";
 
@@ -23,7 +24,7 @@ export const ProductPage = () => {
 
 
     if (status === StatusCode.LOADING) {
-        return <p className="text-xl">Loading...</p>
+        return <ProductSkeleton/>
     }
 
     if (status === StatusCode.ERROR) {
@@ -38,12 +39,12 @@ export const ProductPage = () => {
                         <div>
                             <img src={data?.image} alt={data?.title} className="w-60 hover:scale-105 duration-200 mx-auto" />
                         </div>
-                        <div className="flex flex-col space-y-6 text-center md:text-left">
+                        <div className="flex flex-col space-y-6 text-left">
                             <div>
                                 <p className="bg-black text-white rounded-full px-3 py-1 inline-block">Free shipping</p>
                             </div>
                             <h2 className="max-w-sm text-2xl font-medium">{data?.title}</h2>
-                            <div className="flex items-center space-x-2 group">
+                            <div className="flex space-x-2 group">
                                 <div className="w-3 h-3 bg-yellow-400 rounded-full grounp-hover:animate-ping"></div>  <p className="text-sm">{data?.rating?.rate} <span className="font-bold">Rating</span></p>
                             </div>
                             <p className="text-5xl font-bold">${data?.price}</p>
