@@ -2,12 +2,12 @@ import { useEffect} from "react"
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { CartButton } from "../molecules/CartButton";
-import { ProductErrorPage } from './ProductErrorPage/ProductErrorPage';
+import { CartButton } from "../../molecules/CartButton";
+import { ProductErrorPage } from '../ProductErrorPage/ProductErrorPage';
 
-import { getProductDetail} from "../../store/ProductSlice";
+import { getProductDetail} from "../../../store/ProductSlice";
 
-import { StatusCode } from "../../utils/StatusCode";
+import { StatusCode } from "../../../utils/StatusCode";
 
 export const ProductPage = () => {
     const dispatch = useDispatch()

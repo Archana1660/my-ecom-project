@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { Card } from "../organisms/Card";
+import { Card } from "../../organisms/Card";
 
 export const CartPage = () => {
     const products = useSelector(state => state.CART)
