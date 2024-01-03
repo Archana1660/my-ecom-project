@@ -4,15 +4,15 @@ import { Provider } from "react-redux"
 import './App.css';
 
 import { RootLayout } from './components/templates/RootLayout';
-import { ProductsDashboardLayout } from './components/pages/ProductsDashboardLayout';
+import { ProductsDashboardLayout } from './components/pages/ProductDashboardPage/ProductsDashboardLayout';
 
-import { ProductDashboard } from './components/pages/ProductDashboard';
-
+import { ProductDashboard } from './components/pages/ProductDashboardPage/ProductDashboard';
 import LoginPage from './components/pages/LoginPage/LoginPage';
-import { HomePage } from './components/pages/HomePage';
-import { ProductPage } from './components/pages/ProductPage';
-import { CartPage } from './components/pages/CartPage';
+import { HomePage } from './components/pages/HomePage/HomePage';
+import { ProductPage } from './components/pages/ProductPage/ProductPage';
+import { CartPage } from './components/pages/CartPage/CartPage';
 import { ErrorPage } from './components/pages/ErrorPage/ErrorPage';
+
 import store from "./store/store";
 
 function App() {

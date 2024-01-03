@@ -1,9 +1,10 @@
 import { useEffect} from "react"
-import { Card } from "../organisms/Card";
+import { Card } from "../../organisms/Card";
 import { useSelector, useDispatch } from "react-redux";
-import { getProducts } from "../../store/ProductDashboardStore/AllProductDashboardSlice";
-import { StatusCode } from "../../utils/StatusCode";
-import { ErrorPage } from "./ErrorPage/ErrorPage";
+import { getProducts } from "../../../store/ProductDashboardStore/AllProductDashboardSlice";
+import { StatusCode } from "../../../utils/StatusCode";
+import { ErrorPage } from "../ErrorPage/ErrorPage";
+import { ProductDashboardSkeleton } from "./ProductDashboardSkeleton";
 
 export const AllProductDashboard = () => {
     const dispatch = useDispatch()
@@ -14,7 +15,7 @@ export const AllProductDashboard = () => {
     }, [dispatch])
 
     if (status === StatusCode.LOADING) {
-        return <p className="text-xl">Loading...</p>
+        return <ProductDashboardSkeleton/>
     }
 
     if (status === StatusCode.ERROR) {

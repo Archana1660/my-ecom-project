@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { soundCheck, ring_braclet_earring_set, summar, mens_jeans_shoe } from '../../assets'
+import { soundCheck, ring_braclet_earring_set, summar, mens_jeans_shoe } from '../../../assets'
 
 
 
