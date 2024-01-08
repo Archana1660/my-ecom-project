@@ -6,7 +6,7 @@ export const RootLayout = () => {
     const auth = { token: isToken }
     return auth.token ?
         <main>
-            <header>
+            <header className="sticky top-0 z-10">
                 <NavBarPanel />
             </header>
             <Outlet />
